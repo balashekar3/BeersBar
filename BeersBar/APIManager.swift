@@ -9,6 +9,7 @@ import Foundation
 final class APIManager:APIManagerProtocol{
     
     func getDecodaleDataAsync<D>(from endpoint: EndPoint, with responseModel: D.Type) async -> Result<D, NetworkMangerErrors> where D : Decodable {
+        
         do {
             let request = try createRequest(from: endpoint)
             debugPrint("sending request: \(request)")
@@ -27,6 +28,7 @@ final class APIManager:APIManagerProtocol{
         } catch {
             return .failure(.unknown("Server error!!"))
         }
+        
     }
 }
 
@@ -37,21 +39,21 @@ extension APIManager{
         urlComponents.host = endpoint.host
         urlComponents.path = endpoint.path
         
-        //url check
+        //Url check
         guard let url = urlComponents.url else {
             throw NetworkMangerErrors.invalidURL
         }
-        //parameters
+        //Parameters
         if let parameters = endpoint.parameters{
             debugPrint("Sending parameters:\(parameters)")
             urlComponents.queryItems = parameters
         }
-        //method
+        //Method
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue
         //header
         request.allHTTPHeaderFields = endpoint.header
-        //body
+        //Body
         if let body = endpoint.body {
             request.httpBody = try? JSONEncoder().encode(body)
         }
