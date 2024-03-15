@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1136792BA42D29007BAEA1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1136782BA42D29007BAEA1 /* Reachability.swift */; };
 		0D2EF8B82B80928C0088C66D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2EF8B72B80928C0088C66D /* AppDelegate.swift */; };
 		0D2EF8BA2B80928C0088C66D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2EF8B92B80928C0088C66D /* SceneDelegate.swift */; };
 		0D2EF8BF2B80928D0088C66D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D2EF8BD2B80928D0088C66D /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D1136782BA42D29007BAEA1 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0D2EF8B42B80928C0088C66D /* BeersBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeersBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D2EF8B72B80928C0088C66D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D2EF8B92B80928C0088C66D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D1136772BA42D1B007BAEA1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0D1136782BA42D29007BAEA1 /* Reachability.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		0D2EF8AB2B80928C0088C66D = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 		0D2EF8B62B80928C0088C66D /* BeersBar */ = {
 			isa = PBXGroup;
 			children = (
+				0D1136772BA42D1B007BAEA1 /* Helpers */,
 				0D2EF8D82B81094B0088C66D /* Extentions */,
 				0D2EF8D02B80F6530088C66D /* Screens */,
 				0D2EF8CB2B8093210088C66D /* NetworkManager */,
@@ -104,7 +115,6 @@
 		0D2EF8D02B80F6530088C66D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				0D2EF8D12B80F68F0088C66D /* BeersListScreen.swift */,
 				0DFD476C2B83557B00250953 /* Model */,
 				0DFD476B2B83556B00250953 /* ViewModel */,
 				0DFD476A2B83555A00250953 /* View */,
@@ -132,6 +142,7 @@
 		0DFD476A2B83555A00250953 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0D2EF8D12B80F68F0088C66D /* BeersListScreen.swift */,
 				0D2EF8D42B8100700088C66D /* BeerTableViewCell.swift */,
 				0D2EF8D52B8100700088C66D /* BeerTableViewCell.xib */,
 			);
@@ -160,7 +171,6 @@
 				640E702CC3A6D0A473E14C0F /* Pods-BeersBar.debug.xcconfig */,
 				B6B210705417A18FF5A750C4 /* Pods-BeersBar.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -295,6 +305,7 @@
 				0D2EF8B82B80928C0088C66D /* AppDelegate.swift in Sources */,
 				0D2EF8D22B80F68F0088C66D /* BeersListScreen.swift in Sources */,
 				0DFD476E2B8355B300250953 /* BeersViewModel.swift in Sources */,
+				0D1136792BA42D29007BAEA1 /* Reachability.swift in Sources */,
 				0D2EF8CD2B8093470088C66D /* Enums.swift in Sources */,
 				0D2EF8DA2B81097F0088C66D /* TableViewCellExtentions.swift in Sources */,
 				0D2EF8BA2B80928C0088C66D /* SceneDelegate.swift in Sources */,

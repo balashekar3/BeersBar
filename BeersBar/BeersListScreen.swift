@@ -21,15 +21,15 @@ class BeersListScreen: UIViewController {
         setupTableView()
     }
     // MARK: - SetupTableView
-
+    
     private func setupTableView(){
         beersListTableView.delegate = self
         beersListTableView.dataSource = self
         beersListTableView.register(BeerTableViewCell.nib, forCellReuseIdentifier: BeerTableViewCell.identifier)
     }
-        
+    
 }
-    // MARK: - TableViewExtension
+// MARK: - TableViewExtension
 
 extension BeersListScreen : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,9 +52,15 @@ extension BeersListScreen : UITableViewDelegate,UITableViewDataSource{
 }
 
 extension BeersListScreen{
+    
     func setupViewModel(){
-        viewModel.getListForBeers()
-        viewmodelCallBackes()
+        if Reachability.isConnectedToNetwork() {
+            debugPrint("Network connection success")
+            viewModel.getListForBeers()
+            viewmodelCallBackes()
+        }else{
+            debugPrint("Network connection failed!!")
+        }
     }
     func viewmodelCallBackes(){
         viewModel.eventHandler = { [weak self] recivedEvent in
