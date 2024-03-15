@@ -56,13 +56,13 @@ extension APIEndpoints:EndPoint{
     }
     
     var host: String {
-        "api.punkapi.com"
+        "api.sampleapis.com"
     }
     
     var path: String {
         switch self {
         case .getBeers:
-            return "/v2/beers"
+            return "/beers/ale"
         }
     }
     
